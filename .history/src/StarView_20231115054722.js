@@ -25,7 +25,7 @@ export default function StarView({
   passRef,
   ...passThroughProps
 }) {
-  let Icon = ({...props}) => <View {...props}></View>;
+  let Icon = MaterialCommunityIcons;
   
   const viewStyle = useMemo(() => [styles.row, style], [style]);
   const renderIcons = useCallback(
@@ -55,7 +55,7 @@ export default function StarView({
   );
 
   useEffect(() => {
-    Icon = ({...props}) => <View {...props}></View>;
+    Icon = <View></View>;
   }, [iconSet]);
 
   if (stars == null || typeof stars !== 'number') return null;

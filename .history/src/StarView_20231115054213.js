@@ -1,5 +1,17 @@
 import React, { useCallback, useState, useEffect, useMemo } from 'react';
 import { View, StyleSheet} from 'react-native';
+import EntypoIcons from 'react-native-vector-icons/Entypo';
+import EvilIconsIcons from 'react-native-vector-icons/EvilIcons';
+import FeatherIcons from 'react-native-vector-icons/Feather';
+import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome';
+import FoundationIcons from 'react-native-vector-icons/Foundation';
+import IoniconsIcons from 'react-native-vector-icons/Ionicons';
+import MaterialIconsIcons from 'react-native-vector-icons/MaterialIcons';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import OcticonsIcons from 'react-native-vector-icons/Octicons';
+import ZocialIcons from 'react-native-vector-icons/Zocial';
+import SimpleLineIconsIcons from 'react-native-vector-icons/SimpleLineIcons';
+import Fontisto from 'react-native-vector-icons/Fontisto';
 /*
 export interface StarViewProps {
   style?: StyleProp<ViewStyle>;
@@ -10,6 +22,22 @@ export interface StarViewProps {
   emptyIcon?: string;
 }
 */
+
+const iconSets = {
+  Entypo: EntypoIcons,
+  EvilIcons: EvilIconsIcons,
+  Feather: FeatherIcons,
+  Fontisto:Fontisto,
+  FontAwesome: FontAwesomeIcons,
+  Foundation: FoundationIcons,
+  Ionicons: IoniconsIcons,
+  MaterialIcons: MaterialIconsIcons,
+  MaterialCommunityIcons: MaterialCommunityIcons,
+  Octicons: OcticonsIcons,
+  Zocial: ZocialIcons,
+  SimpleLineIcons: SimpleLineIconsIcons,
+};
+
 
 export default function StarView({
   style = undefined,
@@ -25,7 +53,7 @@ export default function StarView({
   passRef,
   ...passThroughProps
 }) {
-  let Icon = ({...props}) => <View {...props}></View>;
+  let Icon = MaterialCommunityIcons;
   
   const viewStyle = useMemo(() => [styles.row, style], [style]);
   const renderIcons = useCallback(
@@ -55,7 +83,7 @@ export default function StarView({
   );
 
   useEffect(() => {
-    Icon = ({...props}) => <View {...props}></View>;
+    Icon = iconSets[iconSet];
   }, [iconSet]);
 
   if (stars == null || typeof stars !== 'number') return null;

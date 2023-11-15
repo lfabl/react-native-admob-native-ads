@@ -29298,6 +29298,7 @@
         "@expo/cli": "0.4.11",
         "@expo/config": "7.0.3",
         "@expo/config-plugins": "5.0.4",
+        "@expo/vector-icons": "^13.0.0",
         "babel-preset-expo": "~9.2.2",
         "cross-spawn": "^6.0.5",
         "expo-application": "~5.0.1",

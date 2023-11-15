@@ -635,3 +635,6 @@ lint/tmp/
 # lint/reports/
 
 yarn.lock
+
+# FAB
+/.history

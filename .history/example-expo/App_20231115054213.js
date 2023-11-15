@@ -13,6 +13,7 @@ import {requestTrackingPermission} from 'react-native-tracking-transparency';
 import {AdView} from './src/AdView';
 import List from './src/List';
 import {routes} from './src/utils';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const App = () => {
   const [currentRoute, setCurrentRoute] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -69,6 +70,7 @@ const App = () => {
               justifyContent: 'center',
               borderRadius: 100,
             }}>
+            <Icon name="arrow-left" color="black" size={28} />
           </TouchableOpacity>
         )}
       </View>
